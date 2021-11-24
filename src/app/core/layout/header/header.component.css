@@ -1,7 +1,8 @@
 header .container{
-    background-color: aqua;
+    background-color: azure;
 }
 
 header .container .logo {
+    width: 40px;
     
 }
