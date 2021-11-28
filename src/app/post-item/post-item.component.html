@@ -4,10 +4,10 @@
             <strong class="d-inline-block mb-2 text-primary">{{ thisPost.category }}</strong>
             <h3 class="mb-0">{{ thisPost.title }}</h3>
             <div class="mb-1 text-muted">{{ thisPost.created }}</div>
-            <div *ngFor="let text of thisPost.texts">                
+            <div>
                 <p class="card-text mb-auto">{{ thisPost.texts }}</p>
             </div>
-            <a href="#" class="stretched-link">Continue reading</a>
+            <a [routerLink]="['/post', thisPost.id]" class="stretched-link">Continue lendo</a>
         </div>
         <div class="col-auto d-none d-lg-block">
             <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img"

@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
+import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './core/layout/footer/footer.component';
+import { HeaderComponent } from './core/layout/header/header.component';
+import { NavComponent } from './core/layout/nav/nav.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PostItemComponent } from './post-item/post-item.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostViewComponent } from './post-view/post-view.component';
-import { HeaderComponent } from './core/layout/header/header.component';
-import { FooterComponent } from './core/layout/footer/footer.component';
-import { NavComponent } from './core/layout/nav/nav.component';
-import { PostItemComponent } from './post-item/post-item.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +24,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FooterComponent,
     NavComponent,
     PostItemComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AboutComponent,
+    ContactComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TooltipModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,4 +8,4 @@ export interface Post {
     created?: string;
     tags?: string[];
     texts?: string[];
-  }
+}

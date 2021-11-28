@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Post } from '../shared/interface/post.interface';
+import { PostsService } from '../shared/services/posts.service';
 
 @Component({
   selector: 'app-post-list',
@@ -8,33 +10,11 @@ import { Post } from '../shared/interface/post.interface';
 })
 export class PostListComponent implements OnInit {
 
+  posts: Post[];
   showPosts: boolean;
-  posts: Post[] = [
-    {
-      id: '1',
-      title: 'Felicidade',
-      category: 'Poesias',
-      likes: 123,
-      created: 'abr-2000',
-      texts: ['Num dia que bem não lembro', 'Não sei se janeiro ou setembro...'],
-      tags: ['#esculturas', '#poesianaopodefaltar']
 
-    },
-    {
-      id: '2',
-      title: 'Nosso segundo Post',
-      category: 'Músicas',
-      likes: 304
-    },
-    {
-      id: '3',
-      title: 'Nosso terceiro Post',
-      category: 'Pinturas',
-      likes: 75
-    }
-]
-
-  constructor() { 
+  constructor( postsService: PostsService) {
+    this.posts = postsService.getPosts();
     this.showPosts = true;
   }
 
