@@ -10,14 +10,26 @@ import { PostViewComponent } from './post-view/post-view.component';
 
 
 const routes: Routes = [
-  { path: 'posts', component: PostListComponent},
-  { path: 'post/:id', component: PostViewComponent},
-  { path: 'sobre-mim', component: AboutComponent},
-  { path: 'contato', component: ContactComponent},
-  { path: 'portifolio', component: PortfolioComponent},
-  { path: 'not-found', component: PageNotFoundComponent},
-  { path: '', redirectTo: '/posts', pathMatch: 'full'},
-  { path: '**', redirectTo: '/not-found', pathMatch: 'full'}
+  { path: 'posts', component: PostListComponent },
+  {
+    path: 'post/:id',
+    component: PostViewComponent,
+    children: [
+      {
+        path: 'comentarios',
+        loadChildren: () =>
+          import('./post-view/comments/comments.module').then(
+            (m) => m.CommentsModule
+          ),
+      },
+    ],
+  },
+  { path: 'sobre-mim', component: AboutComponent },
+  { path: 'contato', component: ContactComponent },
+  { path: 'portifolio', component: PortfolioComponent },
+  { path: 'not-found', component: PageNotFoundComponent },
+  { path: '', redirectTo: '/posts', pathMatch: 'full' },
+  { path: '**', redirectTo: '/not-found', pathMatch: 'full' },
 ];
 
 @NgModule({

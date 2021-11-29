@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,8 +30,7 @@ import { PostViewComponent } from './post-view/post-view.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    TooltipModule.forRoot()
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
