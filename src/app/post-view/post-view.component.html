@@ -191,4 +191,5 @@
   </div>
 </div>
 <router-outlet name="comments-outlet"></router-outlet>
-<button routerLink="comentarios">Carregar Comentários</button>
+<button [routerLink]="['comentarios']">Carregar Comentários</button>
+<button [routerLink]="['../'+postId]">Fechar Comentários</button>
