@@ -1,3 +1,5 @@
-<ul *ngFor="let comment of this.comments">
-  <li>{{ comment.comment }}</li>
+<ul *ngFor="let comment of comments; index as i">
+  <li>Comentário: {{i + 1}} <p>{{ comment.comment }}</p></li>
 </ul>
+
+<app-comments-form></app-comments-form>

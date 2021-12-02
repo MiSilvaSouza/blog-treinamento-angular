@@ -1,0 +1,11 @@
+<form [formGroup]="commentForm" (ngSubmit)="sendForm()">
+  <label for="comment-txt">Comentário:</label>
+  <textarea id="comment-txt" name="commentTxt" #commentTxt formControlName="commentTxt"></textarea>
+  <div *ngIf="commentForm.controls['commentTxt'].errors?.['required'] && commentForm.controls['commentTxt'].dirty || commentForm.controls['commentTxt'].touched">
+    O campo comentário precisa ser preenchido
+  </div>
+  <div *ngIf="commentForm.controls['commentTxt'].errors?.['minlength'] && commentForm.controls['commentTxt'].dirty || commentForm.controls['commentTxt'].touched">
+    O campo comentário precisa ter no mínimo 10 caracteres
+  </div>
+  <button type="submit" [disabled]="!commentForm.valid">Enviar</button>
+</form>
