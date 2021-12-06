@@ -1,4 +1,5 @@
 <div class="row mb-2">
+  <h1 *ngIf="keyword">Buscando por: {{ this.keyword }}</h1>
   <div *ngFor="let post of posts">
     <app-post-item [thisPost]="post"></app-post-item>
   </div>

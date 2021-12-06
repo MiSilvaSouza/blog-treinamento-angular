@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AboutComponent } from './about/about.component';
@@ -14,6 +15,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PostItemComponent } from './post-item/post-item.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostViewComponent } from './post-view/post-view.component';
+import { LayoutComponent } from './core/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { PostViewComponent } from './post-view/post-view.component';
     PageNotFoundComponent,
     AboutComponent,
     ContactComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

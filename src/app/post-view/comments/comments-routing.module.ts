@@ -5,13 +5,16 @@ import { LoginGuard } from './../../shared/guard/login.guard';
 import { CommentsComponent } from './comments.component';
 
 const routes: Routes = [
-  { path: '', component: CommentsComponent, outlet: 'comments-outlet', canActivate:[LoginGuard] },
-
+  {
+    path: '',
+    component: CommentsComponent,
+    outlet: 'comments-outlet',
+    canActivate: [LoginGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class CommentsRoutingModule { }
-
+export class CommentsRoutingModule {}

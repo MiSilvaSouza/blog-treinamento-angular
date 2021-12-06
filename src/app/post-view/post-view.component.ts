@@ -12,10 +12,12 @@ import { PostsService } from '../shared/services/posts.service';
 export class PostViewComponent implements OnInit {
   postId: string | null;
   post: Post | undefined;
+  contentHtml = '<p>testando <b>negrito</b></b></p>';
 
   constructor(route: ActivatedRoute, postsService: PostsService) {
   this.postId = route.snapshot.paramMap.get('id');
-  this.post = postsService.getPostById(this.postId);
+  //this.post = postsService.getPostById(this.postId);
+  postsService.getPostById(this.postId).subscribe((res) => {this.post = res});
   }
 
   ngOnInit(): void {

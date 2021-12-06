@@ -5,7 +5,7 @@
             <h3 class="mb-0">{{ thisPost.title }}</h3>
             <div class="mb-1 text-muted">{{ thisPost.created }}</div>
             <div>
-                <p class="card-text mb-auto">{{ thisPost.texts }}</p>
+                <p class="card-text mb-auto" >{{ thisPost.post | slice:0:100}}...</p>
             </div>
             <a [routerLink]="['/post', thisPost.id]" class="stretched-link">Continue lendo</a>
         </div>

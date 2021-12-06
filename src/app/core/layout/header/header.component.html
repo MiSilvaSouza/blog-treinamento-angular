@@ -5,8 +5,8 @@
                 <img class= logo src="assets/img/flower.png"><h1>{{ pageTitle }}</h1>
             </a>
             <app-nav></app-nav>
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                <input type="search" class="form-control" placeholder="Buscar..." aria-label="Buscar">
+            <form [formGroup]="searchForm" (ngSubmit)="doSearch()" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <input type="search" name="searchInput" formControlName="searchInput" class="form-control" placeholder="Buscar..." aria-label="Buscar">
             </form>
             <div class="dropdown text-end">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
