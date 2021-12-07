@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-layout-admin',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutAdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['admin/login'])
   }
 
 }

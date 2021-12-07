@@ -18,7 +18,7 @@ export class LoginGuard implements CanActivate {
 
     if(!loggedIn) {
       alert("Você precisa se identificar para comentar e será direcionado para página de Login");
-      this.router.navigate(["/login"]);
+      this.router.navigate(["admin/login"]);
     }
 
     return loggedIn;
